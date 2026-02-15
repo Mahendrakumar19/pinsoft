@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: 'Professional software development studio building custom applications and scalable solutions',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/pinsoft-logo.png',
         width: 1200,
         height: 630,
         alt: 'PinSoft - Complete Software Solutions',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PinSoft - Complete Software Solutions',
     description: 'Professional software development studio building custom applications and scalable solutions',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/pinsoft-logo.png'],
   },
   robots: {
     index: true,
@@ -70,6 +70,24 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   manifest: '/site.webmanifest',
+  other: {
+    'application/ld+json': JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'PinSoft',
+      'url': 'https://pinsoft.in',
+      'logo': 'https://pinsoft.in/images/pinsoft-logo.png',
+      'sameAs': [
+        'https://wa.me/917905069943'
+      ],
+      'contactPoint': {
+        '@type': 'ContactPoint',
+        'telephone': '+91-7905069943',
+        'contactType': 'customer service',
+        'email': 'mahendra.mk174@gmail.com'
+      }
+    })
+  }
 }
 
 export default function RootLayout({

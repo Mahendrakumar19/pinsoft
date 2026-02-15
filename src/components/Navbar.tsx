@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -18,7 +19,18 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 glass">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="text-2xl font-bold text-primary">PinSoft</Link>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="relative w-10 h-10">
+              <Image 
+                src="/images/pinsoft-logo.png" 
+                alt="PinSoft Logo" 
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <span className="text-2xl font-bold text-primary">PinSoft</span>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">

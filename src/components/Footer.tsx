@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -6,7 +7,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-primary mb-4">PinSoft</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="relative w-12 h-12">
+                <Image 
+                  src="/images/pinsoft-logo.png" 
+                  alt="PinSoft Logo" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-primary">PinSoft</h3>
+            </div>
             <p className="text-gray-600">Enterprise software development for complex organisational challenges.</p>
           </div>
           <div>
@@ -32,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-          <p>© 2024 PinSoft. All rights reserved.</p>
+          <p>© 2026 PinSoft. All rights reserved.</p>
         </div>
       </div>
     </footer>
