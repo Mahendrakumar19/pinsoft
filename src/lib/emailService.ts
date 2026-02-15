@@ -1,5 +1,4 @@
-// We don't import nodemailer at the top since it causes issues with SSR
-// Instead, we'll use the nodemailer package directly
+import type nodemailer from 'nodemailer';
 
 interface EmailData {
   name: string;
@@ -10,11 +9,12 @@ interface EmailData {
 
 export async function sendContactEmail(data: EmailData): Promise<boolean> {
   try {
-    // Use require for nodemailer to avoid SSR issues
-    const nodemailer = require('nodemailer');
+    // Dynamically import nodemailer to avoid serverless issues
+    const nodemailerModule = await import('nodemailer');
+    const nodemailerInstance = nodemailerModule.default;
 
     // Create transporter using environment variables
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailerInstance.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
       secure: false, // true for 465, false for other ports

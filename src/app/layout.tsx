@@ -3,7 +3,6 @@ import { Inter, Roboto_Mono, Space_Grotesk } from 'next/font/google'
 import '../styles/globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { ThemeProvider } from '@/contexts/ThemeContext'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -79,13 +78,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={`${inter.className} ${spaceGrotesk.variable} ${robotoMono.variable}`}>
-        <ThemeProvider>
-          <Navbar />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   )

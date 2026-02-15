@@ -174,116 +174,112 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="neon-border p-1 rounded-2xl"
           >
-            <GlassCard className="p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-              <div className="relative z-10">
-                <h2 className="text-2xl font-bold text-white mb-6 gradient-text">Send us a Message</h2>
-                
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12"
-                  >
-                    <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-300">We'll get back to you soon.</p>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-blue-400/50"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                          Email Address
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-blue-400/50"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-
+            <GlassCard className="p-8">
+              <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+              
+              {isSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-12"
+                >
+                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">Message Sent!</h3>
+                  <p className="text-gray-300">We'll get back to you soon.</p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                        Subject
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                        Full Name
                       </label>
                       <input
                         type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:border-blue-400/50"
-                        placeholder="Project inquiry"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Your name"
                       />
                     </div>
-
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                        Message
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                        Email Address
                       </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleChange}
                         required
-                        rows={5}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none hover:border-blue-400/50"
-                        placeholder="Tell us about your project..."
-                      ></textarea>
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="your@email.com"
+                      />
                     </div>
+                  </div>
 
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          <span>Sending...</span>
-                        </>
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5" />
-                          <span>Send Message</span>
-                        </>
-                      )}
-                    </motion.button>
-                  </form>
-                )}
-              </div>
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                      Subject
+                    </label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      placeholder="Project inquiry"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                      placeholder="Tell us about your project..."
+                    ></textarea>
+                  </div>
+
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5" />
+                        <span>Send Message</span>
+                      </>
+                    )}
+                  </motion.button>
+                </form>
+              )}
             </GlassCard>
           </motion.div>
         </div>
