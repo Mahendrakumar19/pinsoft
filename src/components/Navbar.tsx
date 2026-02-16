@@ -25,7 +25,7 @@ export default function Navbar() {
                 src="/images/pinsoft-logo.png" 
                 alt="PinSoft Logo" 
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
