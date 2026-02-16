@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex justify-center mb-4">
-              <div className="relative w-12 h-12">
+              <div className="relative w-20 h-20">
                 <Image 
                   src="/images/pinsoft-logo.png" 
                   alt="PinSoft Logo" 
                   fill
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
